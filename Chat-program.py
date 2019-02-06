@@ -8,7 +8,7 @@ from webbrowser import get
 class Chat:
     def __init__(self):
 
-        self.VERSION = 0.99
+        self.VERSION = 1.00
         self.BACKGROUND = '#141414'
         self.FOREGROUND = '#FFFFFF'
         self.THEME = '#FFFFFF'
@@ -97,6 +97,7 @@ class Chat:
     def show(self, message, colour):
         self.Box_Chat.tag_config(colour, foreground=colour, underline=0)
         self.Box_Chat.insert(INSERT ,'\n' + message, colour)
+        self.Box_Chat.see(END)
 
     def url(self, link):
         if self.openingLinks:
